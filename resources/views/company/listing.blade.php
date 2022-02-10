@@ -8,6 +8,7 @@
 <div class="job-listing-area jbdet">
     <div class="container main-bg jbdet">
         <div class="row">
+
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -39,7 +40,7 @@
                                                 <span class="badge badge-pill badge-soft-success font-size-11">{{ $company->jobs->count() }}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="{{ route('show.company', ['name'=> \Str::of($company->name)->kebab()]) }}" class="btn btn-details text-white">
+                                                <a href="{{ route('show.company', ['company'=> $company->id]) }}" class="btn btn-details text-white">
                                                     View Details
                                                 </a>
                                             </td>
