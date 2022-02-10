@@ -7,7 +7,7 @@
             </div>
         @endif
         <div class="job-tittle">
-            <span class="company-name">{{ $jobData->company->name }}</span>
+            <!-- <span class="company-name">{{ $jobData->company->name }}</span> -->
             <h4>{{ $jobData->title }}</h4>
             <ul>
                 <li>

@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Helpers\CustomHelper;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Stripe;
 use App\Services\Job\JobService;
 use App\Services\Company\CompanyService;
 use App\Services\Category\CategoryService;
-use Stripe;
+
 class JobController extends Controller {
     
     protected $jobService;
@@ -247,24 +248,25 @@ class JobController extends Controller {
         if(isset($request->job_id)) {
 			$jobDetails = $this->jobService->find($request->job_id);
             if(!empty($jobDetails)) {
+
 				// update payment log and mark status=1 as paid
 				$this->jobService->updatePaymentLogStatusByJobId($request->job_id, 1);
 
 				// update job status as completed
 				$this->jobService->updateJobCreationStepById($request->job_id, 2);
-				
+
 				// send email
-                try { 
-                    $data = $request;
-                    $data['subject'] = 'Job Posting';
-                    $data['jobUrl']  = url('/post-a-job/'. \CustomHelper::createJobUrl($request->job_id, $jobDetails->company->id));
-                    \CustomHelper::sendEmail([
-                        'subject'   => $data['subject'],
-                        'to'        => 'hassanmehmood6195@gmail.com',
-                        'htmlBody'  => view('email.create-job', $data)->render(),
-                    ]);
-                } catch(Exception $ex) {    
-                }
+                // try { 
+                //     $data = $request;
+                //     $data['subject'] = 'Job Posting';
+                //     $data['jobUrl']  = url('/post-a-job/'. \CustomHelper::createJobUrl($request->job_id, $jobDetails->company->id));
+                //     \CustomHelper::sendEmail([
+                //         'subject'   => $data['subject'],
+                //         'to'        => 'hassanmehmood6195@gmail.com',
+                //         'htmlBody'  => view('email.create-job', $data)->render(),
+                //     ]);
+                // } catch(Exception $ex) {    
+                // }
 
                 return redirect('post-a-job')->with('payment_done', 'Payment has been successfully completed.');
 			}
