@@ -68,7 +68,6 @@ class JobService {
             return null;
         }
     }
-
     /**
      * Get Jobs by city
      *
