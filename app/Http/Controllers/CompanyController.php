@@ -32,17 +32,28 @@ class CompanyController extends Controller
     }
 
     public function showCompany($name) {
-        $namegroup = Company::select('id','name')->get();
-        foreach($namegroup as $onearray) {
-            $namecom = $onearray->name;
-            $reult = str_replace(' ','-', strtolower($namecom));
-            if($reult === $name) {
-             $sdfid = $onearray->id; 
+
+        //get ID and name array and process 
+    //     $namegroup = Company->getrecord($name)
+    //     foreach($namegroup as $onearray) {
+    //         $namecom = $onearray->name;
+    //         $reult = str_replace(' ','-', strtolower($namecom));
+    //         if($reult === $name) {
+    //          $sdfid = $onearray->id; 
+    //         }
+    //     };
+    //   $company = $this->companyService->find($sdfid);
+    //   $jobs = $company->jobs;
+    // //   echo $jobs;
+    //   return view('company.jobs', ['company' => $company, 'jobs'=> $jobs]);
+        
+    //using mutator 
+    $companies = Company::all();
+        foreach ($companies as $company) {
+            $onename = $company->slug;
+            if($onename === $name) {
+                return view('company.jobs', ['company' => $company, 'jobs'=> $company->jobs]);
             }
-        };
-      $company = $this->companyService->find($sdfid);
-      $jobs = $company->jobs;
-    //   echo $jobs;
-      return view('company.jobs', ['company' => $company, 'jobs'=> $jobs]);
+        }
     }
 }
