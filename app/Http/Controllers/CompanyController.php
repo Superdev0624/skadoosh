@@ -32,8 +32,17 @@ class CompanyController extends Controller
     }
 
     public function showCompany($name) {
-      $company = $this->companyService->findByName($name);
+        $namegroup = Company::select('id','name')->get();
+        foreach($namegroup as $onearray) {
+            $namecom = $onearray->name;
+            $reult = str_replace(' ','-', strtolower($namecom));
+            if($reult === $name) {
+             $sdfid = $onearray->id; 
+            }
+        };
+      $company = $this->companyService->find($sdfid);
       $jobs = $company->jobs;
-      return view('company.jobs', ['company' => $company, 'jobs' => $jobs]);
+    //   echo $jobs;
+      return view('company.jobs', ['company' => $company, 'jobs'=> $jobs]);
     }
 }
