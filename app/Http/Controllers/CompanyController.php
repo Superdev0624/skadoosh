@@ -31,7 +31,8 @@ class CompanyController extends Controller
         ]);
     }
 
-    public function showCompany(Company $company) {
+    public function showCompany($name) {
+      $company = $this->companyService->findByName($name);
       $jobs = $company->jobs;
       return view('company.jobs', ['company' => $company, 'jobs' => $jobs]);
     }
