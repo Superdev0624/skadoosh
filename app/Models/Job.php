@@ -44,6 +44,11 @@ class Job extends Model {
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function getSlugAttribute() {
+        $lowercase = strtolower($this->title);
+        return str_replace(" ", "-", $lowercase);
+    }
 }
 
 ?>

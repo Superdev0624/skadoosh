@@ -32,9 +32,7 @@ class CompanyController extends Controller
     }
 
     public function showCompany($name) {
-
-        //get ID and name array and process 
-    //     $namegroup = Company->getrecord($name)
+    //  $namegroup = Company::select('id','name')->get();
     //     foreach($namegroup as $onearray) {
     //         $namecom = $onearray->name;
     //         $reult = str_replace(' ','-', strtolower($namecom));
@@ -46,14 +44,15 @@ class CompanyController extends Controller
     //   $jobs = $company->jobs;
     // //   echo $jobs;
     //   return view('company.jobs', ['company' => $company, 'jobs'=> $jobs]);
-        
-    //using mutator 
+    // }
     $companies = Company::all();
-        foreach ($companies as $company) {
-            $onename = $company->slug;
-            if($onename === $name) {
-                return view('company.jobs', ['company' => $company, 'jobs'=> $company->jobs]);
-            }
+    foreach ($companies as $company) {
+        echo $company;
+        $onename = $company->slug;
+        if($onename === $name) {
+            return view('company.jobs', ['company' => $company, 'jobs'=> $company->jobs]);
         }
+        abort(404);
     }
+}
 }

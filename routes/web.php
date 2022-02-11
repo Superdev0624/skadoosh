@@ -31,7 +31,7 @@ Route::post('/payment-done', [App\Http\Controllers\JobController::class, 'paymen
 Route::get('/search-job', [App\Http\Controllers\JobController::class, 'searchJobs']);
 
 
-Route::get('/job-detail/{id}', [App\Http\Controllers\JobController::class, 'detail']);
+Route::get('/job-detail/{title}', [App\Http\Controllers\JobController::class, 'detail']);
 Route::get('/load-job-detail/{id}', [App\Http\Controllers\JobController::class, 'loadJobDetail']);
 
 // company routes

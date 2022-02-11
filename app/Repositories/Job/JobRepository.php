@@ -125,6 +125,10 @@ class JobRepository implements RepositoryInterface {
         return $this->job->with('company', 'salary', 'paymentLog')->find($job_id);
     }
 
+    public function findByName($name)
+    {
+        return $this->job->where('title', $name)->first();
+    }
     /**
      * Get Job by ID
      *

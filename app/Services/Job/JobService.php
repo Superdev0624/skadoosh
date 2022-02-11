@@ -53,6 +53,16 @@ class JobService {
         }
     }
 
+    public function findByName($name)
+    {
+        try {
+            return $this->jobRepository->findByName($name);
+        } catch (\Exception $e) {
+            dd('error', $e);
+            return null;
+        }
+    }
+
     /**
      * Get Jobs by pagination
      *
