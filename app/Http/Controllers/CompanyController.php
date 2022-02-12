@@ -47,9 +47,7 @@ class CompanyController extends Controller
     // }
     $companies = Company::all();
     foreach ($companies as $company) {
-        echo $company;
-        $onename = $company->slug;
-        if($onename === $name) {
+        if($company->slug === $name) {
             return view('company.jobs', ['company' => $company, 'jobs'=> $company->jobs]);
         }
         abort(404);

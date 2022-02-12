@@ -88,19 +88,18 @@ class JobController extends Controller {
         $jobDetails = Job::all();
         foreach($jobDetails as $applyjob) {
             $jobname = $applyjob->slug;
-            break;
-        }
-        if($jobname === $name){
-           $get_id = $applyjob->id;
-           $jobDetails = $this->jobService->find($get_id);
+            if($jobname === $name){
+                $get_id = $applyjob->id;
+                $jobDetails = $this->jobService->find($get_id);
                 if(!empty($jobDetails)) {
                     $data               = [];
                     $data['categories'] = $this->categoryService->findAll();
                     $data['jobData']    = $jobDetails;
                     $data['code']       = $get_id;
                     return view('jobs.detail', $data);
-                }  
+                }
                 abort(404);
+            }
         }
     }
     /**
