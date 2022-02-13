@@ -94,12 +94,15 @@
                         Companies
                         <a class="float-right" href="{{ route('show.all.companies') }}" style="font-size: 18px;color: #333 !important">View All</a>
                     </h3>
-                    <div class="row logos">
-                        @foreach ($companies as $company)
-                            <div class="col-sm-2 col-6">
-                                <img class="img-fluid" src="{{ asset(env('COMPANY_IMAGE_PATH').'/'.$company->logo) }}" alt="{{ $company->name }}" />
-                            </div>
-                        @endforeach
+                    <div class="row logos h-25">
+                    @foreach ($companies as $i => $company)
+                        <div class="col-sm-2">      
+                            <img class="img-fluid" src="{{ asset(env('COMPANY_IMAGE_PATH').'/'.$company->logo) }}" alt="{{ $company->name }}" />
+                        </div>
+                        @if($i == 2)
+                            @break
+                        @endif
+                    @endforeach
                     </div>
                 </div>
             </div>

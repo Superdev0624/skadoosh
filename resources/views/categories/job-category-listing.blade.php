@@ -99,7 +99,7 @@
                                     </div>
 
                                     <div class="jobs-link">
-                                        <a href="{{ url('job-detail/'. $job->id) }}"><button type="button">Apply</button></a>
+                                        <a href="{{ url('job-detail/'. str_replace(' ','-', strtolower($job->title))) }}"><button type="button">Apply</button></a>
                                     </div>
                                 </div>
 
