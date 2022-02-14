@@ -13,7 +13,7 @@
         <div class="widget-stat card">
             <div class="card-body ">
                 <div class="media ai-icon row">
-                    <div class="col-xl mt-2">
+                    <div class="col-xl-6 mt-2">
                         <span class="mr-3 bgl-primary text-primary">
                             <!-- <i class="ti-user"></i> -->
                             <svg width="80" height="70" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="media-body col-xl-6">
                         <h3 class="mb-0 text-black"><span class="counter ml-0 fs-1 fw-medium align-middle">{{ $jobs->count() }}</span></h3>
-                        <p class="mb-2 fs-6 mx-auto my-auto">Total jobs</p>
+                        <p class="mb-2 fs-5 mx-auto my-auto">Total jobs</p>
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
         <div class="widget-stat card">
             <div class="card-body">
                 <div class="media ai-icon row">
-                    <div class="col-xl mt-2">
+                    <div class="col-xl-6 mt-2">
                         <span class="mr-3 bgl-primary text-primary">
                         <!-- <i class="ti-user"></i> -->
-                            <svg  width="70" height="50" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg  width="80" height="70" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                 d="M19.08 24.36C19.08 25.64 18.76 26.8667 18.12 28.04C17.48 29.1867 16.5333 30.1467 15.28 30.92C14.0533 31.6933 12.5733 32.1333 10.84 32.24V35.48H8.68V32.24C6.25333 32.0267 4.28 31.2533 2.76 29.92C1.24 28.56 0.466667 26.84 0.44 24.76H4.32C4.42667 25.88 4.84 26.8533 5.56 27.68C6.30667 28.5067 7.34667 29.0267 8.68 29.24V19.24C6.89333 18.7867 5.45333 18.32 4.36 17.84C3.26667 17.36 2.33333 16.6133 1.56 15.6C0.786667 14.5867 0.4 13.2267 0.4 11.52C0.4 9.36 1.14667 7.57333 2.64 6.16C4.16 4.74666 6.17333 3.96 8.68 3.8V0.479998H10.84V3.8C13.1067 3.98667 14.9333 4.72 16.32 6C17.7067 7.25333 18.5067 8.89333 18.72 10.92H14.84C14.7067 9.98667 14.2933 9.14667 13.6 8.4C12.9067 7.62667 11.9867 7.12 10.84 6.88V16.64C12.6 17.0933 14.0267 17.56 15.12 18.04C16.24 18.4933 17.1733 19.2267 17.92 20.24C18.6933 21.2533 19.08 22.6267 19.08 24.36ZM4.12 11.32C4.12 12.6267 4.50667 13.6267 5.28 14.32C6.05333 15.0133 7.18667 15.5867 8.68 16.04V6.8C7.29333 6.93333 6.18667 7.38667 5.36 8.16C4.53333 8.90667 4.12 9.96 4.12 11.32ZM10.84 29.28C12.28 29.12 13.4 28.6 14.2 27.72C15.0267 26.84 15.44 25.7867 15.44 24.56C15.44 23.2533 15.04 22.2533 14.24 21.56C13.44 20.84 12.3067 20.2667 10.84 19.84V29.28Z"
                                 fill="#2F4CDD" />
@@ -47,7 +47,7 @@
                     </div>
                     <div class="media-body col-xl-6">
                         <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">{{$revenue}}</span>K</h3>
-                        <p class="mb-2 fs-6 mx-auto my-auto">Total Revenue</p>
+                        <p class="mb-2 fs-5 mx-auto my-auto">Total Revenue</p>
                     </div>
                 </div>
             </div>
@@ -57,10 +57,10 @@
         <div class="widget-stat card">
             <div class="card-body">
                 <div class="media ai-icon row">
-                    <div class="col-xl mt-2">
+                    <div class="col-xl-6 mt-2">
                         <span class="mr-3 bgl-primary text-primary">
                             <!-- <i class="ti-user"></i> -->
-                            <svg width="70" height="50" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="80" height="70" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M4 30.5H22.75C23.7442 30.4989 24.6974 30.1035 25.4004 29.4004C26.1035 28.6974 26.4989 27.7442 26.5 26.75V16.75C26.5 16.4185 26.3683 16.1005 26.1339 15.8661C25.8995 15.6317 25.5815 15.5 25.25 15.5C24.9185 15.5 24.6005 15.6317 24.3661 15.8661C24.1317 16.1005 24 16.4185 24 16.75V26.75C23.9997 27.0814 23.8679 27.3992 23.6336 27.6336C23.3992 27.8679 23.0814 27.9997 22.75 28H4C3.66857 27.9997 3.3508 27.8679 3.11645 27.6336C2.88209 27.3992 2.7503 27.0814 2.75 26.75V9.25C2.7503 8.91857 2.88209 8.6008 3.11645 8.36645C3.3508 8.13209 3.66857 8.0003 4 8H15.25C15.5815 8 15.8995 7.8683 16.1339 7.63388C16.3683 7.39946 16.5 7.08152 16.5 6.75C16.5 6.41848 16.3683 6.10054 16.1339 5.86612C15.8995 5.6317 15.5815 5.5 15.25 5.5H4C3.00577 5.50109 2.05258 5.89653 1.34956 6.59956C0.646531 7.30258 0.251092 8.25577 0.25 9.25V26.75C0.251092 27.7442 0.646531 28.6974 1.34956 29.4004C2.05258 30.1035 3.00577 30.4989 4 30.5Z"
                                     fill="#2F4CDD" />
@@ -78,7 +78,7 @@
                     </div>
                     <div class="media-body col-xl-6">
                          <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">279</span></h3>
-                         <p class="mb-2 fs-6 mx-auto my-auto">Total Earnings</p>
+                         <p class="mb-2 fs-5 mx-auto my-auto">Total Earnings</p>
                     </div>
                 </div>
             </div>
@@ -88,10 +88,10 @@
         <div class="widget-stat card">
             <div class="card-body">
                 <div class="media ai-icon row">
-                    <div class="col-xl mt-2">
+                    <div class="col-xl-5 mt-2">
                         <span class="mr-3 bgl-primary text-primary">
                         <!-- <i class="ti-user"></i> -->
-                            <svg width="70" height="50" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="80" height="70" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M11.25 19.25C12.2389 19.25 13.2056 18.9568 14.0279 18.4074C14.8501 17.8579 15.491 17.0771 15.8694 16.1634C16.2478 15.2498 16.3469 14.2445 16.1539 13.2746C15.961 12.3046 15.4848 11.4137 14.7855 10.7145C14.0863 10.0152 13.1954 9.539 12.2255 9.34608C11.2555 9.15315 10.2502 9.25217 9.33658 9.6306C8.42295 10.009 7.64206 10.6499 7.09265 11.4722C6.54325 12.2944 6.25 13.2611 6.25 14.25C6.25129 15.5757 6.77849 16.8467 7.71589 17.7841C8.65329 18.7215 9.92431 19.2487 11.25 19.25ZM11.25 11.75C11.7445 11.75 12.2278 11.8966 12.6389 12.1713C13.05 12.446 13.3705 12.8365 13.5597 13.2933C13.7489 13.7501 13.7984 14.2528 13.702 14.7377C13.6055 15.2227 13.3674 15.6681 13.0178 16.0178C12.6681 16.3674 12.2227 16.6055 11.7377 16.702C11.2528 16.7984 10.7501 16.7489 10.2933 16.5597C9.83648 16.3705 9.44603 16.0501 9.17133 15.6389C8.89662 15.2278 8.75 14.7445 8.75 14.25C8.75089 13.5872 9.01457 12.9519 9.48322 12.4832C9.95187 12.0146 10.5872 11.7509 11.25 11.75Z"
                                     fill="#2F4CDD" />
@@ -104,9 +104,9 @@
                             </svg>
                         </span>
                     </div>
-                    <div class="media-body col-xl-6">
-                        <h3 class="mb-0 text-black"><span class="counter ml-0 fs-4 fw-medium align-middle">{{$commoncity[0]->location_city}}</span></h3>
-                        <p class="mb-2 fs-6 mx-auto my-auto">Top Cities Selling</p>
+                    <div class="media-body col-xl-7">
+                        <h3 class="mb-0 text-black"><span class="counter ml-0 fs-5 fw-medium align-middle">{{$commoncity[0]->location_city}}</span></h3>
+                        <p class="mb-2 fs-5 mx-auto my-auto">Top Cities Selling</p>
                     </div>
                 </div>
             </div>
