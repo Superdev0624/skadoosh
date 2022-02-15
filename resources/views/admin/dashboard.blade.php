@@ -77,6 +77,7 @@
                         </span>
                     </div>
                     <div class="media-body col-xl-6">
+                         
                          <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">{{$earning}}</span>K</h3>
                          <p class="mb-2 fs-5 mx-auto my-auto">Total Earnings</p>
                     </div>
