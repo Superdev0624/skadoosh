@@ -25,7 +25,7 @@
                     </div>
                     <div class="media-body col-xl-6">
                         <h3 class="mb-0 text-black"><span class="counter ml-0 fs-1 fw-medium align-middle">{{ $jobs->count() }}</span></h3>
-                        <p class="mb-2 fs-5 mx-auto my-auto">Total jobs</p>
+                        <p class="mb-2 fs-5 mx-auto my-auto mt-3">Total jobs</p>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         </span>
                     </div>
                     <div class="media-body col-xl-6">
-                        <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">{{$revenue}}</span>K</h3>
+                        <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">{{ $jobs->count() * 10}} </span></h3>
                         <p class="mb-2 fs-5 mx-auto my-auto">Total Revenue</p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         </span>
                     </div>
                     <div class="media-body col-xl-6">
-                         <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">279</span></h3>
+                         <h3 class="mb-0 text-black"><span class="counter ml-0 fs-2 fw-medium align-middle">{{$earning}}</span>K</h3>
                          <p class="mb-2 fs-5 mx-auto my-auto">Total Earnings</p>
                     </div>
                 </div>

@@ -95,11 +95,13 @@
                         <a class="float-right" href="{{ route('show.all.companies') }}" style="font-size: 18px;color: #333 !important">View All</a>
                     </h3>
                     <div class="row logos h-25">
-                    @foreach ($companies as $i => $company)
-                        <div class="col-sm-2">      
-                            <img class="img-fluid" src="{{ asset(env('COMPANY_IMAGE_PATH').'/'.$company->logo) }}" alt="{{ $company->name }}" />
+                    @foreach ($companies as $company)
+                        <div class="col-sm-2"> 
+                            <a href="{{ $company->website }}" target="__blank">     
+                                <img class="img-fluid" src="{{ asset(env('COMPANY_IMAGE_PATH').'/'.$company->logo) }}" alt="{{ $company->name }}" />
+                            </a>
                         </div>
-                        @if($i == 2)
+                        @if($loop->index == 11)
                             @break
                         @endif
                     @endforeach
