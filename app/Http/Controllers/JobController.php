@@ -109,20 +109,21 @@ class JobController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    
+    {    
         $request->validate([
-            'jobTitle'          =>  'required|max:255',
-            'jobCategory'       =>  'required',
-            'jobType'           =>  'required',
-            'jobLocation'       =>  ( $request->jobLocation == 'office' || $request->jobLocation == 'remote_region' ) ? 'required' : 'nullable',
+            'jobTitle'                  =>  'required|max:255',
+            'jobCategory'               =>  'required',
+            'jobType'                   =>  'required',
+            'jobLocation'               =>  ( $request->jobLocation == 'office' || $request->jobLocation == 'remote_region' ) ? 'required' : 'nullable',
             'jobOfficeLocationCity'     =>  $request->jobLocation === 'office' ? 'required' : 'nullable',
             'jobOfficeLocationState'    =>  $request->jobLocation === 'office' ? 'required' : 'nullable',
             'jobRegionalRestriction'    =>  $request->jobLocation === 'remote_region' ? 'required' : 'nullable',
-            'jobApplyLink'      =>  'url',
-            'companyName'       =>  'required',
-            'companyEmail'      =>  'required|email:rfc,dns',
-            'companyLogo'       =>  ($request->hasFile('companyLogo')) ? 'image|mimes:jpeg,png,jpg,gif,svg' : 'nullable',
-            'companyWebsite'    =>  'nullable|url'
+            'jobApplyLink'              =>  'url',
+            'companyName'               =>  'required',
+            'companyEmail'              =>  'required|email:rfc,dns',
+            'companyLogo'               =>  ($request->hasFile('companyLogo')) ? 'image|mimes:jpeg,png,jpg,gif,svg' : 'nullable',
+            'companyWebsite'            =>  'nullable|url'
         ]);
         
         $request['jobLocationCity']     = '';
@@ -165,7 +166,6 @@ class JobController extends Controller {
 
 
         $response = $this->jobService->create($request);
-
         return redirect('preview-job/'.\CustomHelper::createJobUrl($response['id'], $company['id']));
     }
 
@@ -278,6 +278,34 @@ class JobController extends Controller {
         }
 
         return redirect('post-a-job')->with('error', 'Payment failed, please contact support.');
+    }
+
+    public function nonpaymentDone(Request $request)
+    {
+        if(isset($request->job_id)) {
+			$jobDetails = $this->jobService->find($request->job_id);
+            if(!empty($jobDetails)) {
+				// update job status as completed
+				$this->jobService->updateJobCreationStepById($request->job_id, 2);
+
+				// send email
+                // try { 
+                //     $data = $request;
+                //     $data['subject'] = 'Job Posting';
+                //     $data['jobUrl']  = url('/post-a-job/'. \CustomHelper::createJobUrl($request->job_id, $jobDetails->company->id));
+                //     \CustomHelper::sendEmail([
+                //         'subject'   => $data['subject'],
+                //         'to'        => 'hassanmehmood6195@gmail.com',
+                //         'htmlBody'  => view('email.create-job', $data)->render(),
+                //     ]);
+                // } catch(Exception $ex) {    
+                // }
+
+                return redirect('post-a-job')->with('non_payment_done', 'Job post has been successfully completed.');
+			}
+        }
+
+        return redirect('post-a-job')->with('error', 'Job post failed, please contact support.');
     }
 
     public function loadJobDetail($id)
